@@ -34,11 +34,12 @@ A library of common logback utilities and configurations.
 ```
 
 ```shell
+# only Rubens can publish.
 ./gradlew --info publish
 ```
 
 ```shell
-# only Rubens can push new releases.
+# only Rubens can releases.
 ./gradlew --info release
 ```
 
@@ -68,8 +69,7 @@ dependencyResolutionManagement {
 
     versionCatalogs {
         create("ctlg") {
-            // gradle-catalog release version is 0.0.36 or greater
-            from("com.rubensgomes:gradle-catalog:0.0.36")
+            from("com.rubensgomes:gradle-catalog:0.0.37")
         }
     }
 }
@@ -87,7 +87,7 @@ plugins {
 
 // ...
 dependencies {
-    implementation(ctlg.bundles.logbackext)
+    implementation(ctlg.logbackext.lib)
 }
 // ...
 ```
@@ -113,3 +113,6 @@ dependencies {
 
 </configuration>
 ```
+
+---
+Author:  [Rubens Gomes](https://rubensgomes.com/)
