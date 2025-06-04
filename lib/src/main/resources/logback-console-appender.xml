@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Default logback appender configuration to be imported.
+The properties are defined in another file:
+"logback-properties.xml" found in the same folder.
+
+Sample of logback.xml:
+
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+  <include resource="logback-properties.xml"/>
+  <include resource="logback-console-appender.xml"/>
+
+  <root level="INFO">
+    <appender-ref ref="CONSOLE"/>
+  </root>
+
+  <logger name="org.springframework.web" level="DEBUG"/>
+  <logger name="com.rubensgomes.msfmwk" level="TRACE"/>
+
+</configuration>
+-->
+
+<included>
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+      <level>${CONSOLE_LOG_THRESHOLD}</level>
+    </filter>
+    <encoder>
+      <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+      <charset>${CONSOLE_LOG_CHARSET}</charset>
+    </encoder>
+  </appender>
+</included>
