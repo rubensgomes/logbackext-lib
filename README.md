@@ -52,12 +52,6 @@ git checkout main
 
 ## usage
 
-### ~/.gradle/gradle.properties
-
-- make these system properties to be read from settings.gradle.kts
-systemProp.repsyUsername=rubensgomes
-systemProp.repsyPassword=<RESTRICTED>
-
 ### settings.gradle.kts
 
 ```kotlin
@@ -67,16 +61,13 @@ dependencyResolutionManagement {
 
         maven {
             url = uri("https://repo.repsy.io/mvn/rubensgomes/default/")
-            credentials {
-                username = System.getProperty("repsyUsername")
-                password = System.getProperty("repsyPassword")
-            }
         }
     }
 
     versionCatalogs {
         create("ctlg") {
-            from("com.rubensgomes:gradle-catalog:0.0.37")
+            // ensure you are using the latest version
+            from("com.rubensgomes:gradle-catalog:0.0.62")
         }
     }
 }
@@ -94,7 +85,7 @@ plugins {
 
 // ...
 dependencies {
-    implementation(ctlg.logbackext.lib)
+    implementation(libs.logbackext.lib)
 }
 // ...
 ```
