@@ -65,7 +65,7 @@ dependencyResolutionManagement {
     }
 
     versionCatalogs {
-        create("ctlg") {
+        create("libs") {
             // ensure you are using the latest version
             from("com.rubensgomes:gradle-catalog:0.0.62")
         }
