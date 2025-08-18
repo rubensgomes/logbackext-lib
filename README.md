@@ -34,8 +34,10 @@ A library of common logback utilities and configurations.
 ```
 
 ```shell
-# only Rubens can publish.
+git checkout release
+git pull
 ./gradlew --info publish
+git checkout main
 ```
 
 ```shell
