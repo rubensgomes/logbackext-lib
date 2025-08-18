@@ -32,6 +32,7 @@ A library of common logback utilities and configurations.
 ```shell
 ./gradlew --info assemble
 ```
+
 ```shell
 git commit -m "updated gradle-catalog" -a
 git push
