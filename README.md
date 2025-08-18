@@ -32,17 +32,21 @@ A library of common logback utilities and configurations.
 ```shell
 ./gradlew --info assemble
 ```
+```shell
+git commit -m "updated gradle-catalog" -a
+git push
+```
+
+```shell
+# only Rubens can releases.
+./gradlew --info release
+```
 
 ```shell
 git checkout release
 git pull
 ./gradlew --info publish
 git checkout main
-```
-
-```shell
-# only Rubens can releases.
-./gradlew --info release
 ```
 
 ## usage
