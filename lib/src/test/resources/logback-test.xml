@@ -4,7 +4,7 @@
   <include resource="logback-properties.xml"/>
   <include resource="logback-console-appender.xml"/>
 
-  <root level="INFO">
+  <root level="TRACE">
     <appender-ref ref="CONSOLE"/>
   </root>
 

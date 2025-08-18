@@ -34,21 +34,23 @@ A library of common logback utilities and configurations.
 ```
 
 ```shell
-./gradlew --info publish
+git commit -m "updated gradle-catalog" -a
+git push
 ```
 
 ```shell
-# only Rubens can push new releases.
+# only Rubens can releases.
 ./gradlew --info release
 ```
 
+```shell
+git checkout release
+git pull
+./gradlew --info publish
+git checkout main
+```
+
 ## usage
-
-### ~/.gradle/gradle.properties
-
-- make these system properties to be read from settings.gradle.kts
-systemProp.repsyUsername=rubensgomes
-systemProp.repsyPassword=<RESTRICTED>
 
 ### settings.gradle.kts
 
@@ -59,17 +61,13 @@ dependencyResolutionManagement {
 
         maven {
             url = uri("https://repo.repsy.io/mvn/rubensgomes/default/")
-            credentials {
-                username = System.getProperty("repsyUsername")
-                password = System.getProperty("repsyPassword")
-            }
         }
     }
 
     versionCatalogs {
         create("ctlg") {
-            // gradle-catalog release version is 0.0.36 or greater
-            from("com.rubensgomes:gradle-catalog:0.0.36")
+            // ensure you are using the latest version
+            from("com.rubensgomes:gradle-catalog:0.0.62")
         }
     }
 }
@@ -87,7 +85,7 @@ plugins {
 
 // ...
 dependencies {
-    implementation(ctlg.bundles.logbackext)
+    implementation(libs.logbackext.lib)
 }
 // ...
 ```
@@ -113,3 +111,6 @@ dependencies {
 
 </configuration>
 ```
+
+---
+Author:  [Rubens Gomes](https://rubensgomes.com/)
