@@ -67,7 +67,7 @@ dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             // ensure you are using the latest version
-            from("com.rubensgomes:gradle-catalog:0.0.62")
+            from("com.rubensgomes:gradle-catalog:0.0.63")
         }
     }
 }
